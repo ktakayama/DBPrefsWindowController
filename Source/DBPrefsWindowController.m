@@ -70,6 +70,9 @@
     [self.contentSubview setAutoresizingMask:(NSViewMinYMargin | NSViewWidthSizable)];
     [[[self window] contentView] addSubview:self.contentSubview];
     [[self window] setShowsToolbarButton:NO];
+    if(@available(macOS 11.0, *)) {
+        [[self window] setToolbarStyle:NSWindowToolbarStylePreference];
+    }
 }
 
 
